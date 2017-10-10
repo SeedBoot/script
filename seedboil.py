@@ -19,7 +19,7 @@ A boilerplate workspace
 
 import os
 import shutil
-import subprocess
+#import subprocess
 import time
 
 #############
@@ -66,18 +66,19 @@ php_inc = root + 'includes'
 # php index file
 php_file = root + 'index.php'
 
-##############
+# SCSS FUNCTIONS #
+#################
 
-def open_wamp():
-    '''
-    hey
-    '''
-    time.sleep(0.5)
-    print('Yay!')
-    #Opens Wamp
-    subprocess.call("C:\\wamp64\\wampmanager.exe", shell=True)
-    return
+def scss_gen():
+    """
+    This function generates import:export folders for styling
+    & then copies SCSS files into the import folder
+    """
+    for folder in style_folder:
+        os.mkdir(os.path.join('style', folder))
 
+    for i in scss_file:
+        shutil.copy2(i, scss_dest)
 
 ######################
 ## ON WITH THE SHOW ##
@@ -192,13 +193,7 @@ while css != '0' or css != '1':
         time.sleep(0.5)
         print('SCSS it is!')
 
-        # Generate import:export folders for styling
-        for folder in style_folder:
-            os.mkdir(os.path.join('style', folder))
-
-        # Copy SCSS files into import folder
-        for i in scss_file:
-            shutil.copy2(i, scss_dest)
+        scss_gen()
 
         # create empty variable for sass --watch command
         sasswatch = ''
