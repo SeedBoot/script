@@ -139,13 +139,12 @@ while hp != '0' or hp != '1':
             wamp = input(' Do you want me to start up Wamp server for you? [y/n]\n').lower()
 
             if wamp == 'y':
-                open_wamp()
-                '''
+                #open_wamp()
+                
                 time.sleep(0.5)
                 print('Yay!')
                 #Opens Wamp
                 subprocess.call("C:\\wamp64\\wampmanager.exe", shell=True)
-                '''
                 break
 
             elif wamp == 'n':
@@ -209,6 +208,8 @@ while css != '0' or css != '1':
 
                 # Opens a new cmd to listen for import:export SCSS files
                 os.system('start cmd /c sass --watch style/import:style/export')
+                time.sleep(0.3)
+                print('Done!')
                 break
 
             elif sasswatch == 'n':
@@ -219,7 +220,7 @@ while css != '0' or css != '1':
             else:
                 time.sleep(0.5)
                 print('wut')
-
+        break
         # END WHILE SCSS LOOP
     else:
         time.sleep(0.5)
@@ -227,6 +228,6 @@ while css != '0' or css != '1':
 
 time.sleep(0.5)
 print('Your dev setup is complete...')
-time.sleep(0.5)
+time.sleep(0.7)
 print('Happy coding!')
-time.sleep(1)
+time.sleep(1.3)
