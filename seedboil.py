@@ -76,6 +76,7 @@ def open_wamp():
     print('Yay!')
     #Opens Wamp
     subprocess.call("C:\\wamp64\\wampmanager.exe", shell=True)
+    return
 
 
 ######################
@@ -97,8 +98,6 @@ shutil.copy2(src['js'], dest['js'])
 # dialogue
 time.sleep(0.5)
 print('style and script folders generated.')
-time.sleep(0.5)
-print('...')
 time.sleep(0.5)
 print('JS file generated.')
 time.sleep(0.5)
@@ -130,6 +129,11 @@ while hp != '0' or hp != '1':
         shutil.copytree(php_inc, 'includes')
         shutil.copy2(php_file, 'index.php')
 
+        '''
+        I wanted to create a loop that opens Wampserver
+        but it gets stuck when the script tries to open
+        the program...
+
         #create empty variable for wamp loop
         wamp = ''
 
@@ -139,12 +143,12 @@ while hp != '0' or hp != '1':
             wamp = input(' Do you want me to start up Wamp server for you? [y/n]\n').lower()
 
             if wamp == 'y':
-                #open_wamp()
-                
                 time.sleep(0.5)
                 print('Yay!')
                 #Opens Wamp
                 subprocess.call("C:\\wamp64\\wampmanager.exe", shell=True)
+                time.sleep(0.3)
+                print('Done!')
                 break
 
             elif wamp == 'n':
@@ -157,19 +161,21 @@ while hp != '0' or hp != '1':
                 print('wut')
         break
         # END WHILE WAMP LOOP
+        '''
     else:
         time.sleep(0.5)
         print('wut')
     break
 
-time.sleep(0.5)
-print('Well now we\'ve got that covered, let\'s give you some style!')
+time.sleep(0.7)
+print('Now for some style!')
 
 # CSS or SCSS loop #
 ####################
 
 # create empty variable for css/ scss loop
 css = ''
+
 while css != '0' or css != '1':
     time.sleep(0.5)
   # turn css to input
