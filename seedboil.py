@@ -66,10 +66,23 @@ php_inc = root + 'includes'
 # php index file
 php_file = root + 'index.php'
 
+##############
+
+def open_wamp():
+    '''
+    hey
+    '''
+    time.sleep(0.5)
+    print('Yay!')
+    #Opens Wamp
+    subprocess.call("C:\\wamp64\\wampmanager.exe", shell=True)
+
+
 ######################
 ## ON WITH THE SHOW ##
 ######################
 
+# dialogue
 print('Welcome to SeedBoot\'s boilerplate generator!')
 time.sleep(1)
 print('Generating intial files...')
@@ -78,19 +91,16 @@ print('Generating intial files...')
 os.mkdir('style')
 os.mkdir('script')
 
-time.sleep(0.5)
-print('style and script folders generated.')
-time.sleep(1)
-print('...')
-time.sleep(0.5)
-
 # copy js script file
 shutil.copy2(src['js'], dest['js'])
 
+# dialogue
+time.sleep(0.5)
+print('style and script folders generated.')
+time.sleep(0.5)
+print('...')
 time.sleep(0.5)
 print('JS file generated.')
-time.sleep(0.3)
-print('...')
 time.sleep(0.5)
 
 # HTML or PHP loop #
@@ -129,10 +139,13 @@ while hp != '0' or hp != '1':
             wamp = input(' Do you want me to start up Wamp server for you? [y/n]\n').lower()
 
             if wamp == 'y':
+                open_wamp()
+                '''
                 time.sleep(0.5)
                 print('Yay!')
                 #Opens Wamp
                 subprocess.call("C:\\wamp64\\wampmanager.exe", shell=True)
+                '''
                 break
 
             elif wamp == 'n':
@@ -143,11 +156,12 @@ while hp != '0' or hp != '1':
             else:
                 time.sleep(0.5)
                 print('wut')
-
+        break
         # END WHILE WAMP LOOP
     else:
         time.sleep(0.5)
         print('wut')
+    break
 
 time.sleep(0.5)
 print('Well now we\'ve got that covered, let\'s give you some style!')
