@@ -1,0 +1,26 @@
+* {box-sizing: border-box;}
+/***INDIVIDUAL FONT STYLES***/
+.boldness {font-weight: bold;}
+.centerness {text-align: center;}
+
+
+
+/*******RESPONSIVE STYLES*******/
+   /***LARGE MOBILE DEVICE***/
+@media screen and (min-width: 30em) {
+
+}
+
+/***DESKTOP***/
+@media screen and (min-width: 47em) {
+
+}
+
+/***even BIGGER desktop***/
+@media screen and (min-width: 56em) {
+
+}
+
+@media screen and (min-width: 71em) {
+
+}
