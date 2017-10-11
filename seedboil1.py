@@ -16,18 +16,22 @@ A boilerplate workspace
 ###########
 # IMPORTS #
 ###########
+
 import os
 import shutil
+#import subprocess
 import time
 
 #############
 # VARIABLES #
 #############
+
 # ROOT FOLDER FOR ASSETS #
 root = 'C:/script/asset/'
 
 # VANILLA DEV VARIABLES #
 #########################
+
 #source for html, js and css files
 src = {
     'html': root + 'index.html',
@@ -44,6 +48,7 @@ dest = {
 
 # SCSS VARIABLES #
 ##################
+
 # source for scss files
 scss_file = [root + 'style.scss', root + '_var.scss']
 
@@ -54,6 +59,7 @@ style_folder = ['import', 'export']
 
 # PHP VARIABLES #
 #################
+
 # includes folder
 php_inc = root + 'includes'
 
@@ -63,6 +69,7 @@ php_file = root + 'index.php'
 #############
 # FUNCTIONS #
 #############
+
 # PHP #
 #######
 
@@ -76,6 +83,7 @@ def php_gen():
 
 # SCSS #
 ########
+
 def scss_gen():
     """
     This function generates import:export folders for styling
@@ -90,6 +98,7 @@ def scss_gen():
 ######################
 ## ON WITH THE SHOW ##
 ######################
+
 print('Welcome to SeedBoot\'s boilerplate generator!')
 time.sleep(1)
 print('Generating intial files...')
@@ -103,12 +112,13 @@ shutil.copy2(src['js'], dest['js'])
 
 time.sleep(0.5)
 print('style and script folders generated.')
-time.sleep(0.6)
+time.sleep(0.5)
 print('JS file generated.')
-time.sleep(0.7)
+time.sleep(0.5)
 
 # HTML or PHP loop #
 ####################
+
 # create empty variable for html/ php loop
 hp = ''
 
@@ -146,7 +156,7 @@ print('Now for some style!')
 css = ''
 
 while css != '0' or css != '1':
-    time.sleep(0.7)
+    time.sleep(0.5)
   # turn css to input
     css = input('Will you be using [0]CSS or [1]SCSS today?\n')
 
@@ -200,3 +210,39 @@ print('Your dev setup is complete...')
 time.sleep(0.7)
 print('Happy coding!')
 time.sleep(1.3)
+
+'''
+THIS SHOULD BE ON THE SAME INDENT AFTER php_gen() FUNCTION
+
+I wanted to create a loop that opens Wampserver
+but it gets stuck when the script tries to open
+the program...
+
+#create empty variable for wamp loop
+wamp = ''
+
+while wamp != 'y' or wamp != 'n':
+    time.sleep(0.5)
+    # turn wamp to input
+    wamp = input(' Do you want me to start up Wamp server for you? [y/n]\n').lower()
+
+    if wamp == 'y':
+        time.sleep(0.5)
+        print('Yay!')
+        #Opens Wamp
+        subprocess.call("C:\\wamp64\\wampmanager.exe", shell=True)
+        time.sleep(0.3)
+        print('Done!')
+        break
+
+    elif wamp == 'n':
+        time.sleep(0.5)
+        print('nay...')
+        break
+
+    else:
+        time.sleep(0.5)
+        print('wut')
+break
+# END WHILE WAMP LOOP
+'''
